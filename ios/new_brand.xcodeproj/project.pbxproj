@@ -16,6 +16,10 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* new_brandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* new_brandTests.m */; };
+		40650D82233CC1A3000E6A04 /* QBImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40650D7F233CC19A000E6A04 /* QBImagePicker.framework */; };
+		40650D83233CC1A3000E6A04 /* QBImagePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40650D7F233CC19A000E6A04 /* QBImagePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40650D84233CC1A3000E6A04 /* RSKImageCropper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40650D7E233CC19A000E6A04 /* RSKImageCropper.framework */; };
+		40650D85233CC1A3000E6A04 /* RSKImageCropper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40650D7E233CC19A000E6A04 /* RSKImageCropper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B45D5E194EA0ED87E8762BAB /* libPods-new_brand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527D552796D2DEE80BB4E4A8 /* libPods-new_brand.a */; };
 		B6EE1F368963FF47B3B40C45 /* libPods-new_brand-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E32E657A00530565BCAEEFC7 /* libPods-new_brand-tvOS.a */; };
 		E3BDBD93AC44EF478C254472 /* libPods-new_brand-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D54CBF08A61E3C0A01CD06 /* libPods-new_brand-tvOSTests.a */; };
@@ -39,6 +43,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		40650D86233CC1A3000E6A04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				40650D83233CC1A3000E6A04 /* QBImagePicker.framework in Embed Frameworks */,
+				40650D85233CC1A3000E6A04 /* RSKImageCropper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* new_brandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = new_brandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +77,8 @@
 		2D02E47B1E0B4A5D006451C7 /* new_brand-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "new_brand-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* new_brand-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "new_brand-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		305F743B572D55677C620C47 /* Pods-new_brandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-new_brandTests.release.xcconfig"; path = "Target Support Files/Pods-new_brandTests/Pods-new_brandTests.release.xcconfig"; sourceTree = "<group>"; };
+		40650D7E233CC19A000E6A04 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RSKImageCropper.framework; path = ImageCropPickerSDK/RSKImageCropper.framework; sourceTree = "<group>"; };
+		40650D7F233CC19A000E6A04 /* QBImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QBImagePicker.framework; path = ImageCropPickerSDK/QBImagePicker.framework; sourceTree = "<group>"; };
 		527D552796D2DEE80BB4E4A8 /* libPods-new_brand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-new_brand.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF2661D12B65CEB10AEE829 /* Pods-new_brand-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-new_brand-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-new_brand-tvOSTests/Pods-new_brand-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AABA0CDCA0ED54BC3BC8F14F /* Pods-new_brandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-new_brandTests.debug.xcconfig"; path = "Target Support Files/Pods-new_brandTests/Pods-new_brandTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +104,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45D5E194EA0ED87E8762BAB /* libPods-new_brand.a in Frameworks */,
+				40650D84233CC1A3000E6A04 /* RSKImageCropper.framework in Frameworks */,
+				40650D82233CC1A3000E6A04 /* QBImagePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +162,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40650D7F233CC19A000E6A04 /* QBImagePicker.framework */,
+				40650D7E233CC19A000E6A04 /* RSKImageCropper.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				527D552796D2DEE80BB4E4A8 /* libPods-new_brand.a */,
@@ -161,7 +186,6 @@
 				AABA0CDCA0ED54BC3BC8F14F /* Pods-new_brandTests.debug.xcconfig */,
 				305F743B572D55677C620C47 /* Pods-new_brandTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -230,6 +254,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C1E1B9ADFFA90B91A3FBC413 /* [CP] Copy Pods Resources */,
+				40650D86233CC1A3000E6A04 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,7 +316,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SWK746RR92;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = SWK746RR92;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -453,6 +483,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C1E1B9ADFFA90B91A3FBC413 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-new_brand/Pods-new_brand-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/QBImagePickerController/QBImagePicker.bundle",
+				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QBImagePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RSKImageCropperStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-new_brand/Pods-new_brand-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EBB36204660544D904418E9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +633,7 @@
 			baseConfigurationReference = AABA0CDCA0ED54BC3BC8F14F /* Pods-new_brandTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SWK746RR92;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -607,6 +658,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = SWK746RR92;
 				INFOPLIST_FILE = new_brandTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -628,6 +680,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SWK746RR92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImageCropPickerSDK",
+				);
 				INFOPLIST_FILE = new_brand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -647,6 +704,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWK746RR92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImageCropPickerSDK",
+				);
 				INFOPLIST_FILE = new_brand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

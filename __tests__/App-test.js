@@ -6,8 +6,8 @@ import 'react-native';
 import React from 'react';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import Root from "../app/Root";
+import Root from '../app/Root';
 
 it('renders correctly', () => {
-    renderer.create(<Root/>);
+  renderer.create(<Root />);
 });

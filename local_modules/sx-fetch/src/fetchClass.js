@@ -31,7 +31,7 @@
 
 import axios from 'axios';
 import './utils/promise-extends'; // 扩展了 done 和 finally 方法
-import { mosaicUrl } from './utils/url-utils';
+import {mosaicUrl} from './utils/url-utils';
 import fetchInject from './fetchDecorator';
 
 export default class SxFetch {
@@ -55,8 +55,8 @@ export default class SxFetch {
      * import {mockInstance} from 'path/to/promise-ajax';
      * const mock = new MockAdapter(mockInstance);
      * mock.onGet('/success').reply(200, {
-         *     msg: 'success',
-         * });
+     *     msg: 'success',
+     * });
      */
     this.axiosInstance = this._setOptions(axios.create());
     this.mockInstance = this._setOptions(axios.create());
@@ -67,7 +67,8 @@ export default class SxFetch {
 
   _setOptions(axiosInstance) {
     axiosInstance.defaults.timeout = 10000;
-    axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+    axiosInstance.defaults.headers.post['Content-Type'] =
+      'application/x-www-form-urlencoded;charset=UTF-8';
     axiosInstance.defaults.baseURL = '/';
     return axiosInstance;
   }
@@ -83,14 +84,11 @@ export default class SxFetch {
     return instance;
   }
 
-  _onShowErrorTip() {
-  }
+  _onShowErrorTip() {}
 
-  _onShowSuccessTip() {
-  }
+  _onShowSuccessTip() {}
 
-  _isMock() {
-  }
+  _isMock() {}
 
   /**
    * 初始化promiseAjax，接受一个options参数，options的具体参数如下：
@@ -101,17 +99,13 @@ export default class SxFetch {
    * @param {function} isMock isMock(url, data, method, options){...} 判断请求是否为mock请求
    */
   init({
-         setOptions = (/* instance, isMock */) => {
-         },
-         onShowErrorTip = (/* err, errorTip */) => {
-         },
-         onShowSuccessTip = (/* response, successTip */) => {
-         },
-         isMock = (/* url, data, method, options */) => {
-         },
-         headers = {},
-         ...otherOptions
-       }) {
+    setOptions = (/* instance, isMock */) => {},
+    onShowErrorTip = (/* err, errorTip */) => {},
+    onShowSuccessTip = (/* response, successTip */) => {},
+    isMock = (/* url, data, method, options */) => {},
+    headers = {},
+    ...otherOptions
+  }) {
     setOptions(this.axiosInstance);
     setOptions(this.mockInstance, true); // isMock
     this._onShowErrorTip = onShowErrorTip;
@@ -132,7 +126,10 @@ export default class SxFetch {
   }
 
   fetch(url, data, method = 'get', options = {}) {
-    let { successTip = false, errorTip = method === 'get' ? '获取数据失败！' : '操作失败！' } = options;
+    let {
+      successTip = false,
+      errorTip = method === 'get' ? '获取数据失败！' : '操作失败！',
+    } = options;
     const CancelToken = axios.CancelToken;
     let cancel;
     const isGet = method === 'get';
@@ -152,19 +149,21 @@ export default class SxFetch {
         method,
         url,
         data,
-        cancelToken: new CancelToken(c => cancel = c),
+        cancelToken: new CancelToken(c => (cancel = c)),
         ...options,
-      }).then(response => {
-        this._onShowSuccessTip(response, successTip);
-        resolve(response.data);
-      }).catch(err => {
-        const isCanceled = err && err.message && err.message.canceled;
-        if (isCanceled) return; // 如果是用户主动cancel，不做任何处理，不会触发任何函数
-        this._onShowErrorTip(err, errorTip);
-        reject(err);
-      });
+      })
+        .then(response => {
+          this._onShowSuccessTip(response, successTip);
+          resolve(response.data);
+        })
+        .catch(err => {
+          const isCanceled = err && err.message && err.message.canceled;
+          if (isCanceled) return; // 如果是用户主动cancel，不做任何处理，不会触发任何函数
+          this._onShowErrorTip(err, errorTip);
+          reject(err);
+        });
     });
-    fetchPromise.cancel = function () {
+    fetchPromise.cancel = function() {
       cancel({
         canceled: true,
       });

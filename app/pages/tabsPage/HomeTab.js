@@ -3,29 +3,35 @@
  * Describe:
  */
 
-import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default class HomeTab extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text onPress={() => {
-                    this.props.navigation.navigate('OtherPageOne');
-                }}>HomeTab</Text>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text
+          onPress={() => {
+            this.props.navigation.navigate('OtherPageOne');
+          }}>
+          HomeTab
+        </Text>
 
-                <Text onPress={() => {
-                    this.props.navigation.navigate('ModalNav');
-                }}>go to ModalNav</Text>
-            </View>
-        )
-    }
+        <Text
+          onPress={() => {
+            this.props.navigation.navigate('ModalNav');
+          }}>
+          go to ModalNav
+        </Text>
+      </View>
+    );
+  }
 }

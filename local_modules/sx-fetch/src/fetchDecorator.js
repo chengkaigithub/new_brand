@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 /**
@@ -20,17 +20,28 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
  * @module ajax高阶组件
  */
 
-function fetchInject({ propName = '$fetch' } = {}) {
+function fetchInject({propName = '$fetch'} = {}) {
   const that = this;
-  return function (WrappedComponent) {
+  return function(WrappedComponent) {
     class WithSubscription extends Component {
-      static displayName = `WithSubscription(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+      static displayName = `WithSubscription(${WrappedComponent.displayName ||
+        WrappedComponent.name ||
+        'Component'})`;
 
       constructor(props) {
         super(props);
         this[propName] = {};
         this._$fetchTokens = [];
-        const fetchMethods = ['get', 'post', 'simplePost', 'put', 'patch', 'del', 'singleGet', 'all'];
+        const fetchMethods = [
+          'get',
+          'post',
+          'simplePost',
+          'put',
+          'patch',
+          'del',
+          'singleGet',
+          'all',
+        ];
 
         for (let method of fetchMethods) {
           this[propName][method] = (...args) => {
@@ -50,7 +61,7 @@ function fetchInject({ propName = '$fetch' } = {}) {
         const injectProps = {
           [propName]: fetchProp,
         };
-        return <WrappedComponent {...injectProps} {...this.props}/>;
+        return <WrappedComponent {...injectProps} {...this.props} />;
       }
     }
 

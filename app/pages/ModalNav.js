@@ -2,24 +2,24 @@
  * Create by chengkai on 2019/9/26.
  * Describe:
  */
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 0, 255, 0.3)'
-    }
-})
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 0, 255, 0.3)',
+  },
+});
 
 export default class ModalNav extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text onPress={() => this.props.navigation.goBack()}>ModalNav</Text>
-            </View>
-        )
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text onPress={() => this.props.navigation.goBack()}>ModalNav</Text>
+      </View>
+    );
+  }
 }
