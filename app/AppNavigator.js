@@ -3,22 +3,22 @@
  * Describe:
  */
 import React from 'react';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator, StackViewStyleInterpolator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import HomeTab from './pages/tabsPage/HomeTab';
 import MyTab from './pages/tabsPage/MyTab';
 import ModalNav from './pages/ModalNav';
 import OtherPageOne from './pages/OtherPageOne';
 import OtherPageTwo from './pages/OtherPageTwo';
-import {useScreens} from 'react-native-screens';
+import { useScreens } from 'react-native-screens';
 
 useScreens();
 
 const TabNavigator = createBottomTabNavigator(
   {
-    HomeTab: {screen: HomeTab},
-    MyTab: {screen: MyTab},
+    HomeTab: { screen: HomeTab },
+    MyTab: { screen: MyTab },
   },
   {
     initialRouteName: 'HomeTab',
@@ -32,20 +32,30 @@ const MainNavigator = createStackNavigator(
   {
     TabNavigator: {
       screen: TabNavigator,
-      navigationOptions: ({navigation}) => ({header: null}),
+      navigationOptions: ({ navigation }) => ({ header: null }),
     },
-    OtherPageOne: {screen: OtherPageOne},
-    OtherPageTwo: {screen: OtherPageTwo},
+    OtherPageOne: { screen: OtherPageOne },
+    OtherPageTwo: { screen: OtherPageTwo },
   },
   {
     headerMode: 'screen',
+    transitionConfig: () => ({
+      screenInterpolator: sceneProps => {
+        const { scene } = sceneProps;
+        const { route } = scene;
+        const params = route.params || {};
+        const transition = params.transition || 'forHorizontal';
+        // const transition = params.transition || 'forHorizontal';
+        return StackViewStyleInterpolator[transition](sceneProps);
+      },
+    }),
   },
 );
 
 const RootStack = createStackNavigator(
   {
-    OtherNavigator: {screen: MainNavigator},
-    ModalNav: {screen: ModalNav},
+    OtherNavigator: { screen: MainNavigator },
+    ModalNav: { screen: ModalNav },
   },
   {
     mode: 'modal',

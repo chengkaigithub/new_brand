@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
 });
 
 export default class OtherPageTwo extends React.Component {
-  static navigationOptions = ({navigation}) => {
+  static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
     return {
       headerLeft: (
-        <Button onPress={() => navigation.goBack()} title="返回" color="#f00" />
+        <Button onPress={() => navigation.goBack()} title="返回" color="#f00"/>
       ),
       /* the rest of this config is unchanged */
     };
