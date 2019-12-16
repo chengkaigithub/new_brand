@@ -31,7 +31,7 @@
 
 import axios from 'axios';
 import './utils/promise-extends'; // 扩展了 done 和 finally 方法
-import {mosaicUrl} from './utils/url-utils';
+import { mosaicUrl } from './utils/url-utils';
 import fetchInject from './fetchDecorator';
 
 export default class SxFetch {
@@ -67,8 +67,7 @@ export default class SxFetch {
 
   _setOptions(axiosInstance) {
     axiosInstance.defaults.timeout = 10000;
-    axiosInstance.defaults.headers.post['Content-Type'] =
-      'application/x-www-form-urlencoded;charset=UTF-8';
+    axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
     axiosInstance.defaults.baseURL = '/';
     return axiosInstance;
   }
@@ -126,10 +125,7 @@ export default class SxFetch {
   }
 
   fetch(url, data, method = 'get', options = {}) {
-    let {
-      successTip = false,
-      errorTip = method === 'get' ? '获取数据失败！' : '操作失败！',
-    } = options;
+    let { successTip = false, errorTip = method === 'get' ? '获取数据失败！' : '操作失败！' } = options;
     const CancelToken = axios.CancelToken;
     let cancel;
     const isGet = method === 'get';

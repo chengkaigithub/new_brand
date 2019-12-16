@@ -1,3 +1,4 @@
 import SxFetch from './src/fetchClass';
 
-export default new SxFetch();
+let sxFetch = new SxFetch();
+export default sxFetch;
